@@ -1,0 +1,101 @@
+/*
+  CSS RESET
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    VARIABLES
+ */
+
+:root {
+    /* colors and shadows */
+    --app-gradient: linear-gradient(144.61deg, #001D03 6.06%, #002626 32%, #021A3F 50.05%, #22002E 69.11%, #2C020E 94.04%);
+    --app-green: #5DFFBB;
+    --app-green-secondary: #5EB490;
+    --app-red: #FF5D5D;
+    --app-red-secondary: #B85A5A;
+    --app-white: #FFF;
+    --app-grey-100: #FEFEFE;
+    --app-grey-300: #F5F5F5;
+    --app-black: #000;
+    --app-black-15: rgba(0, 0, 0, 0.25);
+    --app-header-shadow-white: 0px 4px 20px rgba(255, 255, 255, 0.25);
+    --app-header-shadow-black: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    --app-footer-shadow-white: 0px -2px 15px rgba(229, 229, 229, 0.35);
+    --app-footer-shadow-black: 0px 0px 15px rgba(133, 133, 133, 0.35);;
+    --app-skills-shadow-white: 0px -5px 20px rgba(255, 255, 255, 0.25);
+    --app-skills-shadow-black: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    --app-github-shadow-white: 4px 4px 5px rgba(255, 255, 255, 0.25);
+    --app-github-shadow-black: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    --app-leaf-shadow-white: 0px 8.15674px 30.5878px 20.3918px rgba(255, 255, 255, 0.25);
+    --app-leaf-shadow-black: 0px 5.44906px 13.6226px 4.08679px rgba(0, 0, 0, 0.25);
+
+    /* colors and shadows by themes */
+    --app-bg: var(--app-white);
+    --app-primary: var(--app-red);
+    --app-secondary: var(--app-red-secondary);
+    --app-text: var(--app-black);
+    --app-skills-bg: var(--app-black-15);
+    --app-panel-bg: var(--app-grey-300);
+    --app-card-bg: var(--app-grey-100);
+    --app-header-shadow: var(--app-header-shadow-black);
+    --app-footer-shadow: var(--app-footer-shadow-black);
+}
+
+[data-theme="dark"] {
+    --app-bg: var(--app-gradient);
+    --app-primary: var(--app-green);
+    --app-secondary: var(--app-green-secondary);
+    --app-text: var(--app-white);
+    --app-skills-bg: var(--app-black);
+    --app-panel-bg: var(--app-black);
+    --app-card-bg: var(--app-black);
+    --app-header-shadow: var(--app-header-shadow-white);
+    --app-footer-shadow: var(--app-footer-shadow-white);
+}
+
+/*
+  GLOBAL CSS
+ */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: var(--app-bg);
+    scrollbar-gutter: stable both-edges;
+}
+
+body > div {
+    height: 100%;
+}
