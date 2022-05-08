@@ -82,7 +82,7 @@
           }
         }
         &__detail {
-          @include p8;
+          @include p5;
           margin-top: 2rem;
           padding: 0 2.4rem;
           p:not(:first-child) {
@@ -113,7 +113,7 @@
           z-index: -1;
         }
         &__body__detail {
-          @include p6;
+          @include p4;
         }
       }
     }

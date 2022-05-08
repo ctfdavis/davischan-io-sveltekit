@@ -122,8 +122,8 @@
     }
 
     .date {
-      @include p8;
-      font-size: 0.8em;
+      @include p6;
+      font-size: 0.95em;
       color: var(--app-primary);
       &:hover {
         text-decoration: underline;

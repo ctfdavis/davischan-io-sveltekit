@@ -9,7 +9,7 @@
     h1 {
       @include h3;
       margin-top: 5rem;
-      font-size: 1.8rem;
+      font-size: 2rem;
       text-align: center;
     }
     .tags {
@@ -34,7 +34,7 @@
     main {
       margin-top: 2.4rem;
       & :global {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         line-height: 2;
       }
       & :global(*:not(:first-child)) {
@@ -69,11 +69,11 @@
       margin-left: auto;
       margin-right: auto;
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
       main {
         & :global {
-          font-size: 1.6rem;
+          font-size: 1.9rem;
         }
         & :global(h1) {
           font-size: 2.4rem;
@@ -93,7 +93,7 @@
       }
       main {
         & :global {
-          font-size: 1.9rem;
+          font-size: 2.0rem;
         }
         & :global(h1) {
           font-size: 2.8rem;
