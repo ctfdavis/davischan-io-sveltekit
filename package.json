@@ -15,6 +15,8 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-link-attributes": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.12.0",
@@ -29,5 +31,12 @@
     "tslib": "^2.3.1",
     "typescript": "~4.6.2"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "markdown-it": "^13.0.1",
+    "markdown-it-front-matter": "^0.2.3",
+    "markdown-it-link-attributes": "^4.0.0",
+    "markdown-it-prism": "^2.2.4"
+  }
 }

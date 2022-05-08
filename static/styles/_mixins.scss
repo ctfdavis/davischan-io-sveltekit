@@ -10,6 +10,13 @@
   }
 }
 
+@mixin hover-button-up {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: translateY(-0.4rem) skew(-4deg);
+  }
+}
+
 @mixin h0() {
   font-size: 6.4rem;
   font-weight: 700;

@@ -4,9 +4,9 @@
     import PortfolioIcon from '$lib/components/_common/portfolio-icon.svelte';
     import BlogIcon from '$lib/components/_common/blog-icon.svelte';
 
-    let activeHome = $page.url.pathname === '/';
-    let activePortfolio = $page.url.pathname === '/portfolio';
-    let activeBlog = $page.url.pathname === '/blog';
+    $: activeHome = $page.url.pathname === '/';
+    $: activePortfolio = $page.url.pathname === '/portfolio';
+    $: activeBlog = $page.url.pathname === '/blog';
 </script>
 
 <style lang="scss">
@@ -21,6 +21,7 @@
       border-top-right-radius: 4.5rem;
       background: var(--app-panel-bg);
       box-shadow: var(--app-footer-shadow);
+      z-index: 10;
       .links {
         ul {
           display: flex;

@@ -14,12 +14,19 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		files: {
-			assets: "static",
+			assets: "./static",
 			lib: "src/lib",
 			routes: "src/routes",
 			template: "src/app.html",
 		},
-	}
+		vite: {
+			server: {
+				fs: {
+					allow: ["./static"]
+				}
+			}
+		}
+	},
 };
 
 export default config;

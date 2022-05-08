@@ -9,10 +9,6 @@
     margin: 0;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -51,6 +47,8 @@ p, h1, h2, h3, h4, h5, h6 {
     --app-header-shadow-black: 0px 4px 20px rgba(0, 0, 0, 0.2);
     --app-footer-shadow-white: 0px -2px 15px rgba(229, 229, 229, 0.35);
     --app-footer-shadow-black: 0px 0px 15px rgba(133, 133, 133, 0.35);;
+    --app-panel-shadow-white: 2px 0px 15px 3px rgba(255, 255, 255, 0.1);
+    --app-panel-shadow-black: 2px 0px 15px 3px rgba(0, 0, 0, 0.1);
     --app-skills-shadow-white: 0px -5px 20px rgba(255, 255, 255, 0.25);
     --app-skills-shadow-black: 0px 4px 20px rgba(0, 0, 0, 0.15);
     --app-github-shadow-white: 4px 4px 5px rgba(255, 255, 255, 0.25);
@@ -63,11 +61,16 @@ p, h1, h2, h3, h4, h5, h6 {
     --app-primary: var(--app-red);
     --app-secondary: var(--app-red-secondary);
     --app-text: var(--app-black);
-    --app-skills-bg: var(--app-black-15);
+    --app-text-contrast: var(--app-white);
+    --app-skills-bg: var(--app-black);
     --app-panel-bg: var(--app-grey-300);
     --app-card-bg: var(--app-grey-100);
     --app-header-shadow: var(--app-header-shadow-black);
     --app-footer-shadow: var(--app-footer-shadow-black);
+    --app-panel-shadow: var(--app-panel-shadow-black);
+    --app-skills-shadow: var(--app-skills-shadow-black);
+    --app-github-shadow: var(--app-github-shadow-black);
+    --app-leaf-shadow: var(--app-leaf-shadow-black);
 }
 
 [data-theme="dark"] {
@@ -75,11 +78,16 @@ p, h1, h2, h3, h4, h5, h6 {
     --app-primary: var(--app-green);
     --app-secondary: var(--app-green-secondary);
     --app-text: var(--app-white);
-    --app-skills-bg: var(--app-black);
+    --app-text-contrast: var(--app-black);
+    --app-skills-bg: var(--app-black-15);
     --app-panel-bg: var(--app-black);
     --app-card-bg: var(--app-black);
     --app-header-shadow: var(--app-header-shadow-white);
     --app-footer-shadow: var(--app-footer-shadow-white);
+    --app-panel-shadow: var(--app-panel-shadow-white);
+    --app-skills-shadow: var(--app-skills-shadow-white);
+    --app-github-shadow: var(--app-github-shadow-white);
+    --app-leaf-shadow: var(--app-leaf-shadow-white);
 }
 
 /*
@@ -93,9 +101,16 @@ html {
 body {
     font-family: 'Exo 2', sans-serif;
     background: var(--app-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--app-text);
     scrollbar-gutter: stable both-edges;
 }
 
 body > div {
     height: 100%;
+}
+
+button {
+    cursor: pointer;
 }
