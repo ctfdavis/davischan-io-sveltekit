@@ -1,15 +1,8 @@
 import fs from 'fs/promises';
 import fm from 'front-matter';
-import {fileURLToPath} from 'url';
-import path, {dirname} from 'path';
+import path from 'path';
 import type {RequestHandler} from "@sveltejs/kit";
 import type {BlogListing, FrontMatter, BlogListingRes} from "../../lib/types/blog.type";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const relativePathToBlog = '../../../static/blogs';
-const blogDir = path.join(__dirname, relativePathToBlog);
-
 
 const removeMdExt = (filename: string) => {
     return filename.replace(new RegExp('.md$'), '');
@@ -18,9 +11,9 @@ const removeMdExt = (filename: string) => {
 const getBlogListing = async () => {
     const blogListing: BlogListing[] = [];
     try {
-        const files = await fs.readdir(blogDir);
+        const files = await fs.readdir('static/blogs');
         for (const filename of files) {
-            const blogFile = path.join(blogDir, filename);
+            const blogFile = path.join('static/blogs', filename);
             const content = await fs.readFile(blogFile, 'utf8');
             const { seq, tags } = fm<FrontMatter>(content).attributes;
             let i = 0;

@@ -4,9 +4,8 @@ import mdFrontMatter from 'markdown-it-front-matter';
 import mila from 'markdown-it-link-attributes';
 import type {RequestHandler} from "@sveltejs/kit";
 import fs from "fs/promises";
-import path, {dirname} from "path";
+import path from "path";
 import fm from "front-matter";
-import {fileURLToPath} from "url";
 import type {
     BlogRes,
     FrontMatter
@@ -20,15 +19,10 @@ md.use(mdFrontMatter, () => {return;}).use(mila, {
     },
 }).use(prism);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const relativePathToBlog = '../../../static/blogs';
-const blogDir = path.join(__dirname, relativePathToBlog);
-
 const getBlog = async (slug: string) => {
     try {
         const filename = `${slug}.md`;
-        const blogFile = path.join(blogDir, filename);
+        const blogFile = path.join('static/blogs', filename);
         const content = await fs.readFile(blogFile, 'utf8');
         const {seq, ...metadata} = fm<FrontMatter>(content).attributes;
         const renderedContent = md.render(content);
