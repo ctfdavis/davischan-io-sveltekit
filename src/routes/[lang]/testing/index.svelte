@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let vm: string;
+    export let vm;
+
+    $: console.log({vm});
 </script>
 
 <div>

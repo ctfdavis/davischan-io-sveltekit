@@ -9,7 +9,7 @@ const getTesting = async () => {
         }
         return 'has no length'
     } catch (err) {
-        return 'has error';
+        return err;
     }
 }
 
