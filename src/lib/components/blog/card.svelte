@@ -1,6 +1,6 @@
 <script lang="ts">
     import type {BlogListingRes} from "$lib/types/blog.type";
-    import {t} from "$lib/translations";
+    import {t, locale} from "$lib/translations";
 
     export let blog: BlogListingRes;
 </script>
@@ -191,7 +191,7 @@
 
 <div class="blog-card">
     <h3>{blog.title}</h3>
-    <a class="readmore" href="/blog/{blog.slug}">
+    <a class="readmore" href="/{$locale}/blog/{blog.slug}">
         <span>{$t('blog.read_more')}</span>
     </a>
     <p>{blog.desc}</p>
