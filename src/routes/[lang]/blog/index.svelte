@@ -2,7 +2,7 @@
     import type {BlogListingRes} from "$lib/types/blog.type";
     import BlogCard from "$lib/components/blog/card.svelte";
 
-    export let vm: BlogListingRes[];
+    // export let vm: BlogListingRes[];
 </script>
 
 <style lang="scss">
@@ -39,9 +39,9 @@
 
 <section>
     <div class="blog-listing">
-        {#each vm as blog}
-            <BlogCard {blog}/>
-        {/each}
+        <!--{#each vm as blog}-->
+        <!--    <BlogCard {blog}/>-->
+        <!--{/each}-->
     </div>
 </section>
 
