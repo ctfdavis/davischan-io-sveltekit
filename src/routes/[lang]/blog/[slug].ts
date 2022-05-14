@@ -9,7 +9,7 @@ import fm from "front-matter";
 import type {
     BlogRes,
     FrontMatter
-} from "../../../lib/types/blog.type";
+} from "$lib/types/blog.type";
 
 const md = new Md();
 md.use(mdFrontMatter, () => {return;}).use(mila, {
