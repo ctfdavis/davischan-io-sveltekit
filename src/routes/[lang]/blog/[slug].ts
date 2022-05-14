@@ -9,7 +9,7 @@ import fm from "front-matter";
 import type {
     BlogRes,
     FrontMatter
-} from "../../../lib/types/blog.type";
+} from "$lib/types/blog.type";
 
 const md = new Md();
 md.use(mdFrontMatter, () => {return;}).use(mila, {
@@ -22,7 +22,7 @@ md.use(mdFrontMatter, () => {return;}).use(mila, {
 const getBlog = async (slug: string) => {
     try {
         const filename = `${slug}.md`;
-        const blogFile = path.join('static/blogs', filename);
+        const blogFile = path.join('./blogs', filename);
         const content = await fs.readFile(blogFile, 'utf8');
         const {seq, ...metadata} = fm<FrontMatter>(content).attributes;
         const renderedContent = md.render(content);
