@@ -46,6 +46,6 @@ export const get: RequestHandler = async ({params}) => {
     }
 
     return {
-        status: 404
+        status: 500
     };
 }
