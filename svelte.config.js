@@ -14,7 +14,22 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			default: true
+			default: true,
+			crawl: true,
+			entries: [
+				'/en',
+				'/en/portfolio',
+				'/en/testing',
+				'/en/testing/*',
+				'/en/blog',
+				'/en/blog/*',
+				'/zh',
+				'/zh/portfolio',
+				'/zh/testing',
+				'/zh/testing/*',
+				'/zh/blog',
+				'/zh/blog/*'
+			]
 		},
 		files: {
 			assets: "./static",
