@@ -77,6 +77,5 @@ export const { t, locale, locales, loading, loadTranslations, translations } = n
 loading.subscribe(async ($loading) => {
     if ($loading) {
         await loading.toPromise();
-        console.log('Updated translations', translations.get());
     }
 });
