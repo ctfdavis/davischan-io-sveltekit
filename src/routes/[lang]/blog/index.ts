@@ -11,9 +11,9 @@ const removeMdExt = (filename: string) => {
 const getBlogListing = async () => {
     const blogListing: BlogListing[] = [];
     try {
-        const files = await fs.readdir('blogs');
+        const files = await fs.readdir('/blogs');
         for (const filename of files) {
-            const blogFile = path.join('blogs', filename);
+            const blogFile = path.join('/blogs', filename);
             const content = await fs.readFile(blogFile, 'utf8');
             const { seq, tags } = fm<FrontMatter>(content).attributes;
             let i = 0;

@@ -3,7 +3,7 @@ import type {RequestHandler} from "@sveltejs/kit";
 
 const getTesting = async () => {
     try {
-        const files = await fs.readdir('blogs');
+        const files = await fs.readdir('/blogs');
         if (files.length) {
             return 'has length';
         }
