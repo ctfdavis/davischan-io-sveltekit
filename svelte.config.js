@@ -14,7 +14,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			default: true
+			default: false
 		},
 		files: {
 			assets: "./static",
