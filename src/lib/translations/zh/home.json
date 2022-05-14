@@ -1,0 +1,21 @@
+{
+  "intro": {
+    "hi": "您好~",
+    "myself": {
+      "name": "我叫Davis,",
+      "job": "是一位喜歡UI/UX設計的工程師"
+    }
+  },
+  "skills.heading": "技術",
+  "about": {
+    "heading": "關於",
+    "statement": "我是一位喜歡創作的工程師",
+    "paragraph": {
+      "1": "我是一位專注於UI/UX方面的前端工程師。",
+      "2": "我一開始寫前端的原因是因為我自己很喜歡設計及開發軟件介面。 對我而言，要完成一個好用的介面是一件十分有趣和有挑戰性的一項工作。",
+      "3": "說到前端，我個人偏好以下三個技術: Angular， React 和 Svelte。",
+      "4": "我喜歡 Angular 的組織和完整性, React 龐大的生態庫, 和 Svelte 的簡潔和易用。"
+    }
+  },
+  "find_me_on_github": "前往我的Github頁"
+}

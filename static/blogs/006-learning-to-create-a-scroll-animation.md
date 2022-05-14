@@ -1,5 +1,5 @@
 ---
-title: 'Learning to create a scroll animation'
+title: 'Learning to Create a Scroll Animation'
 desc: "Where I investigated into how to create scroll animation using CSS & JavaScript."
 date: '2021/02/21'
 tags: ['CSS', 'JavaScript']

@@ -1,8 +1,9 @@
 <script lang="ts">
+    import {t} from "$lib/translations";
+    import {Theme} from "$lib/types/theme.enum";
+    import theme$ from "$lib/stores/theme";
     import goBackGreen from '/static/images/go-back-green.svg';
     import goBackRed from '/static/images/go-back-red.svg';
-    import {Theme} from "../../types/theme.enum";
-    import theme$ from "../../stores/theme";
 
     let theme = Theme.LIGHT;
 
@@ -30,5 +31,5 @@
     {:else}
         <img src={goBackGreen} alt=""/>
     {/if}
-    <span>Go back to homepage</span>
+    <span>{$t('error.go_back')}</span>
 </a>

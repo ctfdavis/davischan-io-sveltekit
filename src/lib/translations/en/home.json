@@ -1,0 +1,21 @@
+{
+  "intro": {
+    "hi": "Hi there!",
+    "myself": {
+      "name": "I'm Davis,",
+      "job": "a developer who loves UI/UX design."
+    }
+  },
+  "skills.heading": "Skills",
+  "about": {
+    "heading": "About",
+    "statement": "I'm a creative developer",
+    "paragraph": {
+      "1": "I am a front-end developer who focuses on the UI/UX bits.",
+      "2": "I became a front-end developer because I fell in love with the visual aspects of technology. That is, I found working on the user interface both very fun and challenging.",
+      "3": "Speaking of the front-end, I love all of these modern frameworks and libraries: Angular, React & Svelte.",
+      "4": "I like Angular for the structure, React for the ecosystem, and Svelte for the ease of use and fun."
+    }
+  },
+  "find_me_on_github": "Find me on Github"
+}

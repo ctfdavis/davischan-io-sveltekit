@@ -2,6 +2,7 @@
     import theme$ from "$lib/stores/theme";
     import {Theme} from "$lib/types/theme.enum";
     import NextIcon from "$lib/components/_common/next-icon.svelte";
+    import {t} from "$lib/translations";
     import wavingHandGreen from '/static/images/waving-hand-green.png';
     import wavingHandRed from '/static/images/waving-hand-red.png';
     import html5Icon from '/static/images/html5-icon.png';
@@ -16,10 +17,7 @@
     import githubWhite from '/static/images/github-white.png';
     import githubBlack from '/static/images/github-black.png';
 
-    let theme = Theme.LIGHT;
     let aboutShownIndex = 0;
-
-    theme$.subscribe((_theme) => theme = _theme);
 
     const showNextAbout = () => {
         if (aboutShownIndex === 0) aboutShownIndex++;
@@ -58,7 +56,7 @@
 
       h2 {
         @include p2;
-        width: 18rem;
+        width: 30rem;
         margin-top: 3rem;
       }
     }
@@ -280,21 +278,20 @@
 </svelte:head>
 
 <section class="intro">
-    {#if theme === Theme.LIGHT}
+    {#if $theme$ === Theme.LIGHT}
         <img src={wavingHandRed} alt="waving hand"/>
     {:else}
         <img src={wavingHandGreen} alt="waving hand"/>
     {/if}
     <div class="intro__text">
-        <h1>Hi there!</h1>
-        <h2>I’m Davis,
+        <h1>{$t('home.intro.hi')}</h1>
+        <h2>{$t('home.intro.myself.name')}
             <br/>
-            a developer who
-            loves UI/UX design.</h2>
+            {$t('home.intro.myself.job')}</h2>
     </div>
 </section>
 <section class="skills">
-    <h1 class="section-heading">Skills</h1>
+    <h1 class="section-heading">{$t('home.skills.heading')}</h1>
     <div class="list">
         <img src={html5Icon} alt="html5" title="HTML5"/>
         <img src={cssIcon} alt="css" title="CSS3"/>
@@ -308,28 +305,24 @@
     </div>
 </section>
 <section class="about">
-    <h1 class="section-heading">About</h1>
-    <h2>I'm a creative developer</h2>
+    <h1 class="section-heading">{$t('home.about.heading')}</h1>
+    <h2>{$t('home.about.statement')}</h2>
     <div class="about__details">
         <div class="about__detail" class:shownOnMobile={aboutShownIndex === 0}>
-            <p>I am a web developer who focuses on the <strong>UI/UX</strong> bits.</p>
-            <p>I became a front-end developer because I fell in love with the visual aspects of technology. That is, I
-                found
-                working on the user interface both very fun and challenging.</p>
+            <p>{$t('home.about.paragraph.1')}</p>
+            <p>{$t('home.about.paragraph.2')}</p>
         </div>
         <div class="about__detail" class:shownOnMobile={aboutShownIndex === 1}>
-            <p>Speaking of the front-end, I love all of these modern frameworks and libraries: Angular, React &
-                Svelte.</p>
-            <p>I like Angular for the structure, React for the ecosystem, and Svelte for the ease of use and
-                fun.</p>
+            <p>{$t('home.about.paragraph.3')}</p>
+            <p>{$t('home.about.paragraph.4')}</p>
         </div>
     </div>
     <button class="about__next-btn" on:click={showNextAbout}>
         <NextIcon />
     </button>
     <a class="about__github" href="https://github.com/ctfdavis" target="_blank" rel="noopener noreferrer">
-        <span>Find me on Github!</span>
-        {#if theme === Theme.LIGHT}
+        <span>{$t('home.find_me_on_github')}</span>
+        {#if $theme$ === Theme.LIGHT}
             <img src={githubBlack} alt="github"/>
         {:else}
             <img src={githubWhite} alt="github"/>

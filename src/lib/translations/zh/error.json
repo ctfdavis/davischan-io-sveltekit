@@ -1,0 +1,10 @@
+{
+  "not_found": "找不到頁面",
+  "error": {
+    "heading": "發生錯誤",
+    "detail": "以下是發生錯誤的詳情:",
+    "status_code": "狀態代號:",
+    "message": "訊息:"
+  },
+  "go_back": "返回主頁"
+}

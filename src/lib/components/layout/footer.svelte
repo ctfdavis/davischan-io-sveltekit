@@ -1,12 +1,11 @@
 <script lang="ts">
-    import {page} from "$app/stores";
+    import activeLink$ from '$lib/stores/active-link';
     import HomeIcon from '$lib/components/_common/home-icon.svelte';
     import PortfolioIcon from '$lib/components/_common/portfolio-icon.svelte';
     import BlogIcon from '$lib/components/_common/blog-icon.svelte';
+    import {Links} from "$lib/types/links.enum";
+    import { t, locale } from '$lib/translations';
 
-    $: activeHome = $page.url.pathname === '/';
-    $: activePortfolio = $page.url.pathname === '/portfolio';
-    $: activeBlog = $page.url.pathname === '/blog';
 </script>
 
 <style lang="scss">
@@ -51,21 +50,21 @@
     <nav class="links">
         <ul>
             <li>
-                <a href="/" class:active={activeHome}>
-                    <HomeIcon active={activeHome} />
-                    <span>home</span>
+                <a href="/{$locale}" class:active={$activeLink$ === Links.home}>
+                    <HomeIcon active={$activeLink$ === Links.home} />
+                    <span>{$t('nav.home')}</span>
                 </a>
             </li>
             <li>
-                <a href="/portfolio" class:active={activePortfolio}>
-                    <PortfolioIcon active={activePortfolio} />
-                    <span>portfolio</span>
+                <a href="/{$locale}/portfolio" class:active={$activeLink$ === Links.portfolio}>
+                    <PortfolioIcon active={$activeLink$ === Links.portfolio} />
+                    <span>{$t('nav.portfolio')}</span>
                 </a>
             </li>
             <li>
-                <a href="/blog" class:active={activeBlog}>
-                    <BlogIcon active={activeBlog} />
-                    <span>blog</span>
+                <a href="/{$locale}/blog" class:active={$activeLink$ === Links.blog}>
+                    <BlogIcon active={$activeLink$ === Links.blog} />
+                    <span>{$t('nav.blog')}</span>
                 </a>
             </li>
         </ul>

@@ -1,0 +1,10 @@
+{
+  "portfolio": "portfolio",
+  "ng4eb": {
+    "paragraph": {
+      "1": "ng4eb is a free, online, succinct ebook on Angular.",
+      "2": "I wrote this book with an aim to explain Angular concepts in simple terms and with demo examples.",
+      "3": "To help readers read the book more efficiently and comfortably, I converted it to a PWA. created a dark theme mode, and added a number of handful features such as global search."
+    }
+  }
+}

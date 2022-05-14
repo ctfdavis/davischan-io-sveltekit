@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import fm from 'front-matter';
 import path from 'path';
 import type {RequestHandler} from "@sveltejs/kit";
-import type {BlogListing, FrontMatter, BlogListingRes} from "../../lib/types/blog.type";
+import type {BlogListing, FrontMatter, BlogListingRes} from "../../../lib/types/blog.type";
 
 const removeMdExt = (filename: string) => {
     return filename.replace(new RegExp('.md$'), '');
@@ -35,7 +35,7 @@ const getBlogListing = async () => {
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-export const get: RequestHandler = async ({url}) => {
+export const get: RequestHandler = async () => {
     const vm = await getBlogListing();
     if (vm) {
         return {

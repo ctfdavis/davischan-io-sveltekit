@@ -1,5 +1,6 @@
 <script lang="ts">
-    import type {BlogListingRes} from "../../types/blog.type";
+    import type {BlogListingRes} from "$lib/types/blog.type";
+    import {t} from "$lib/translations";
 
     export let blog: BlogListingRes;
 </script>
@@ -61,6 +62,7 @@
       text-decoration: none;
       z-index: var(--z-100);
       transition: all 0.5s ease-in-out;
+
       &::before, &::after {
         content: '';
         position: absolute;
@@ -71,20 +73,25 @@
         transition: all 0.1s ease-in-out;
         pointer-events: none;
       }
+
       &::before {
         left: -8.6rem;
       }
+
       &::after {
         right: -8.6rem;
       }
+
       &:hover {
-        border-left: 3.6rem solid var(--app-primary);
-        border-right: 10.4rem solid var(--app-primary);
+        border-left: 1rem solid var(--app-primary);
+        border-right: 1rem solid var(--app-primary);
         background: var(--app-primary);
+
         &::before, &::after {
           width: 0;
           height: 0;
         }
+
         span {
           white-space: nowrap;
         }
@@ -110,6 +117,7 @@
       border: 0.2rem solid var(--app-primary);
       text-decoration: none;
       color: var(--app-primary);
+
       &:not(:first-child) {
         margin-left: 1.2rem;
       }
@@ -125,6 +133,7 @@
       @include p6;
       font-size: 0.95em;
       color: var(--app-primary);
+
       &:hover {
         text-decoration: underline;
       }
@@ -141,28 +150,30 @@
     .blog-card {
       width: 28rem;
       min-height: 44rem;
+
       h3 {
         font-size: 2.2rem;
       }
+
       .readmore {
         margin-top: 1.6rem;
         font-size: 1.6rem;
-        &:hover {
-          border-left: 3.3rem solid var(--app-primary);
-          border-right: 10.7rem solid var(--app-primary);
-        }
       }
+
       p {
         margin-top: 1.6rem;
         font-size: 1.8rem;
       }
+
       .tags {
         margin-top: 2.4rem;
       }
+
       .tag {
         &, &:hover {
           @include p7;
         }
+
         &:not(:first-child) {
           margin-left: 1.8rem;
         }
@@ -181,7 +192,7 @@
 <div class="blog-card">
     <h3>{blog.title}</h3>
     <a class="readmore" href="/blog/{blog.slug}">
-        <span>Read More</span>
+        <span>{$t('blog.read_more')}</span>
     </a>
     <p>{blog.desc}</p>
     <p class="date">{blog.date}</p>

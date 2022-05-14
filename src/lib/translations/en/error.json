@@ -1,0 +1,10 @@
+{
+  "not_found": "Not Found",
+  "error": {
+    "heading": "Error!",
+    "detail": "Here's the error detail:",
+    "status_code": "Status code:",
+    "message": "Message:"
+  },
+  "go_back": "Go back to homepage"
+}

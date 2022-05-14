@@ -1,6 +1,7 @@
 <script lang="ts">
-
 import GoBackToHomePage from "./go-back-to-home-page.svelte";
+import {t} from "$lib/translations";
+
 </script>
 
 <style lang="scss">
@@ -15,6 +16,6 @@ import GoBackToHomePage from "./go-back-to-home-page.svelte";
 </style>
 
 <div class="container">
-    <h3>Not Found!</h3>
+    <h3>{$t('error.not_found')}</h3>
     <GoBackToHomePage />
 </div>

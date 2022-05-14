@@ -1,16 +1,15 @@
 <script lang="ts">
+    import theme$ from "$lib/stores/theme";
+    import activeLink$ from '$lib/stores/active-link';
     import Logo from '$lib/components/_common/logo.svelte';
-    import {page} from "$app/stores";
     import HomeIcon from '$lib/components/_common/home-icon.svelte';
     import PortfolioIcon from '$lib/components/_common/portfolio-icon.svelte';
     import BlogIcon from '$lib/components/_common/blog-icon.svelte';
     import SwitchIcon from '$lib/components/_common/switch-icon.svelte';
-    import theme$ from "../../stores/theme";
-    import {Theme} from "../../types/theme.enum";
+    import {Theme} from "$lib/types/theme.enum";
+    import {Links} from "$lib/types/links.enum";
+    import { t, locale } from '$lib/translations';
 
-    $: activeHome = $page.url.pathname === '/';
-    $: activePortfolio = $page.url.pathname === '/portfolio';
-    $: activeBlog = $page.url.pathname === '/blog';
     let hoverHome = false;
     let hoverPortfolio = false;
     let hoverBlog = false;
@@ -110,7 +109,7 @@
 
 <aside>
     <header>
-        <a href="/">
+        <a href="/{$locale}">
             <Logo />
             <span>davischan.io</span>
         </a>
@@ -118,39 +117,39 @@
     <nav>
         <ul>
             <li>
-                <a href="/"
-                   class:active={activeHome}
+                <a href="/{$locale}"
+                   class:active={$activeLink$ === Links.home}
                    on:mouseover={() => hoverHome = true}
                    on:focus={() => false}
                    on:mouseout={() => hoverHome = false}
                    on:blur={() => false}
                 >
-                    <HomeIcon active={activeHome} hover={hoverHome}/>
-                    <span>home</span>
+                    <HomeIcon active={$activeLink$ === Links.home} hover={hoverHome}/>
+                    <span>{$t('nav.home')}</span>
                 </a>
             </li>
             <li>
-                <a href="/portfolio"
-                   class:active={activePortfolio}
+                <a href="/{$locale}/portfolio"
+                   class:active={$activeLink$ === Links.portfolio}
                    on:mouseover={() => hoverPortfolio = true}
                    on:focus={() => false}
                    on:mouseout={() => hoverPortfolio = false}
                    on:blur={() => false}
                 >
-                    <PortfolioIcon active={activePortfolio} hover={hoverPortfolio}/>
-                    <span>portfolio</span>
+                    <PortfolioIcon active={$activeLink$ === Links.portfolio} hover={hoverPortfolio}/>
+                    <span>{$t('nav.portfolio')}</span>
                 </a>
             </li>
             <li>
-                <a href="/blog"
-                   class:active={activeBlog}
+                <a href="/{$locale}/blog"
+                   class:active={$activeLink$ === Links.blog}
                    on:mouseover={() => hoverBlog = true}
                    on:focus={() => false}
                    on:mouseout={() => hoverBlog = false}
                    on:blur={() => false}
                 >
-                    <BlogIcon active={activeBlog} hover={hoverBlog}/>
-                    <span>blog</span>
+                    <BlogIcon active={$activeLink$ === Links.blog} hover={hoverBlog}/>
+                    <span>{$t('nav.blog')}</span>
                 </a>
             </li>
         </ul>

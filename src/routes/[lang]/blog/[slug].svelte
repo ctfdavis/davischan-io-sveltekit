@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {BlogRes} from "../../lib/types/blog.type";
+    import type {BlogRes} from "../../../lib/types/blog.type";
     export let vm: BlogRes;
 </script>
 

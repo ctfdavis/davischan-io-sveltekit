@@ -95,6 +95,7 @@ p, h1, h2, h3, h4, h5, h6 {
  */
 
 html {
+    min-height: 100%;
     font-size: 62.5%;
 }
 
@@ -113,4 +114,24 @@ body > div {
 
 button {
     cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 1.2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--app-panel-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--app-primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--app-secondary);
 }

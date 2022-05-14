@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {t} from "$lib/translations";
     import GoBackToHomePage from "./go-back-to-home-page.svelte";
 
     export let message: string;
@@ -21,11 +22,11 @@
 </style>
 
 <div class="container">
-    <h3>Error!</h3>
+    <h3>{$t('error.error.heading')}</h3>
     <p>
-        Here's the error detail:<br />
-        Status code: {status}<br/>
-        Message: {message}
+        {$t('error.error.detail')}<br />
+        {$t('error.error.status_code')} {status}<br/>
+        {$t('error.error.message')} {message}
     </p>
     <GoBackToHomePage />
 </div>
