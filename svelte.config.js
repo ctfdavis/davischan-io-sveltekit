@@ -20,15 +20,13 @@ const config = {
 				'/en',
 				'/en/portfolio',
 				'/en/testing',
-				'/en/testing/*',
+				'/en/testing/another',
 				'/en/blog',
-				'/en/blog/*',
 				'/zh',
 				'/zh/portfolio',
 				'/zh/testing',
-				'/zh/testing/*',
+				'/zh/testing/another',
 				'/zh/blog',
-				'/zh/blog/*'
 			]
 		},
 		files: {
