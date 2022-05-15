@@ -105,6 +105,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--app-text);
+    overflow-x: hidden;
     scrollbar-gutter: stable both-edges;
 }
 

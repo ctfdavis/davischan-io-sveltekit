@@ -1,7 +1,15 @@
+<script context="module" lang="ts">
+    import type {Load} from "@sveltejs/kit";
+
+    export const load: Load = async ({stuff}) => ({props: {url: stuff['route']}});
+</script>
+
 <script lang="ts">
     import Header from "$lib/components/layout/header.svelte";
     import Footer from "$lib/components/layout/footer.svelte";
     import Sidepanel from "$lib/components/layout/sidepanel.svelte";
+    import PageTransition from "$lib/components/layout/page-transition.svelte";
+    export let url;
 </script>
 
 <style lang="scss">
@@ -27,9 +35,11 @@
   }
 </style>
 
-<Header />
-<Sidepanel />
-<main>
-    <slot/>
-</main>
-<Footer />
+<Header/>
+<Sidepanel/>
+    <main>
+        <PageTransition {url}>
+            <slot/>
+        </PageTransition>
+    </main>
+<Footer/>
